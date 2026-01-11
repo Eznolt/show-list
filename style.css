@@ -1,64 +1,177 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Base */
+/* ---------------- Global Styles ---------------- */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #0f172a; /* dark slate */
-  color: #e5e7eb;
-  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #9797f7; /* main background */
+  color: #333;
 }
 
-/* Layout */
-.app {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
-
-.header {
-  margin-bottom: 32px;
-}
-
-.header h1 {
-  font-size: 2rem;
+h1, h2, h3 {
+  margin: 0;
   font-weight: 600;
+  color: #c197f7; /* main color for headings */
 }
 
-/* Content */
-.content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Card (admin panel style) */
-.card {
-  background-color: #020617;
-  border: 1px solid #1e293b;
-  border-radius: 8px;
+/* ---------------- App Layout ---------------- */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   padding: 20px;
 }
 
-.card h2 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: #93c5fd;
+.header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.card ul {
-  list-style: none;
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
 }
 
-.card li {
-  padding: 6px 0;
-  border-bottom: 1px solid #1e293b;
+/* ---------------- Cards ---------------- */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-.card li:last-child {
-  border-bottom: none;
+.all-shows {
+  grid-row: 1 / span 2;
+}
+
+.watching, .finished {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.genre-section h3 {
+  background-color: #c197f7;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ---------------- Buttons ---------------- */
+button {
+  background-color: #c197f7;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-left: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #a075f0;
+}
+
+/* Info Button */
+.info-btn {
+  background-color: transparent;
+  color: #c197f7;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 6px;
+}
+
+.info-btn:hover {
+  color: #a075f0;
+}
+
+/* ---------------- Filters ---------------- */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #c197f7;
+  font-weight: 600;
+  background-color: #fff;
+  color: #333;
+}
+
+/* ---------------- Modal ---------------- */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #c197f7;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  margin: 5px 0;
+}
+
+.modal-content .rating {
+  font-weight: bold;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #c197f7;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: #a075f0;
 }

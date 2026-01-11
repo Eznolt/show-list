@@ -3,33 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Shows I Like</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <!-- Info Modal -->
+  <div id="info-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">✕</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <p class="rating">
+        Rating: <span id="modal-rating"></span>/10
+      </p>
+    </div>
+  </div>
+
   <div class="app">
     <header class="header">
       <h1>Shows I Like</h1>
     </header>
 
-    <main class="content">
-      <section class="card">
-        <h2>Drama</h2>
-        <ul>
-          <li>Breaking Bad</li>
-          <li>The Bear</li>
-        </ul>
+    <!-- Filters -->
+    <div class="filter-bar">
+      <label for="categoryFilter">Category:</label>
+      <select id="categoryFilter" onchange="render()"></select>
+
+      <label for="subGenreFilter">Genre:</label>
+      <select id="subGenreFilter" onchange="render()"></select>
+    </div>
+
+    <main class="dashboard">
+      <section class="card all-shows">
+        <h2>All Shows</h2>
+        <div id="all-shows"></div>
       </section>
 
-      <section class="card">
-        <h2>Comedy</h2>
-        <ul>
-          <li>The Office</li>
-          <li>Brooklyn Nine-Nine</li>
-        </ul>
+      <section class="card watching">
+        <h2>Currently Watching</h2>
+        <ul id="watching"></ul>
+      </section>
+
+      <section class="card finished">
+        <h2>Finished</h2>
+        <ul id="finished"></ul>
       </section>
     </main>
   </div>
-</body>
 
+  <script src="app.js"></script>
+</body>
 </html>
