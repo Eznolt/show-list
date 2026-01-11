@@ -1,56 +1,49 @@
 // ---------------- Data ----------------
-let shows = [
-  /* Anime */
-  { name: "Attack on Titan", category: "Anime", genre: "Action", description: "Humans fight Titans in a post-apocalyptic world.", rating: 10, status: "all" },
-  { name: "Demon Slayer", category: "Anime", genre: "Action", description: "A boy fights demons to save his sister.", rating: 9, status: "all" },
-  { name: "Hells Paradise", category: "Anime", genre: "Horror", description: "A deadly journey to find the elixir of immortality.", rating: 8, status: "all" },
-  { name: "Spy x Family", category: "Anime", genre: "Comedy", description: "A spy must build a fake family to maintain peace.", rating: 9, status: "all" },
-  { name: "Gachiakuta", category: "Anime", genre: "Adventure", description: "Mystery adventure anime.", rating: 7, status: "all" },
-  { name: "My Dress Up Darling", category: "Anime", genre: "Romance", description: "Romance and cosplay.", rating: 8, status: "all" },
-  { name: "Horimiya", category: "Anime", genre: "Romance", description: "Slice-of-life romance.", rating: 8, status: "all" },
-  { name: "Shangri La Frontier", category: "Anime", genre: "Adventure", description: "Gaming meets adventure.", rating: 8, status: "all" },
-  { name: "Chainsaw Man", category: "Anime", genre: "Horror", description: "Action horror with dark humor.", rating: 10, status: "all" },
-  { name: "Dan Dan Dan", category: "Anime", genre: "Action", description: "Exciting new anime series.", rating: 7, status: "all" },
-  { name: "Lord of the Mysteries", category: "Anime", genre: "Mystery", description: "Mystery and supernatural.", rating: 9, status: "all" },
-  { name: "Wind Breaker", category: "Anime", genre: "Sports", description: "Sports / skating anime.", rating: 8, status: "all" },
-  { name: "Alya Sometimes Hiders her feelings in Russian", category: "Anime", genre: "Romance", description: "Romantic comedy.", rating: 7, status: "all" },
-  { name: "86 eighty six", category: "Anime", genre: "Action", description: "War drama with mechs.", rating: 9, status: "all" },
-  { name: "My love story with Yamada run at lvl 999", category: "Anime", genre: "Romance", description: "Romantic comedy adventure.", rating: 8, status: "all" },
-  { name: "Cyberpunk", category: "Anime", genre: "Action", description: "Futuristic action.", rating: 8, status: "all" },
-  { name: "Sakamoto Days", category: "Anime", genre: "Action", description: "Action-comedy with hitman antics.", rating: 8, status: "all" },
-  { name: "Blue Box", category: "Anime", genre: "Romance", description: "Romance and sports.", rating: 8, status: "all" },
-  { name: "Mashle", category: "Anime", genre: "Comedy", description: "Magic school parody.", rating: 7, status: "all" },
+const shows = [
+  /* ---------------- Anime ---------------- */
+  { name: "Attack on Titan", genre: "Anime", description: "People trying not to get eaten by giant monsters. There’s a lot insane moments and plot twists that you wont see coming.", rating: 10, status: "all" },
+  { name: "Demon Slayer", genre: "Anime", description: "Kid goes on a journey to save his sister and fight demons. Was a really good watch for me and animation is top tier", rating: 9, status: "all" },
+  { name: "Hells Paradise", genre: "Anime", description: "This one i already told you about. A bunch of criminals go to a deadly island hunting an elixir for immortality… stuff gets intense fast.", rating: 10, status: "all" },
+  { name: "Spy x Family", genre: "Anime", description: "A spy makes a fake family… and somehow it actually works out. Pretty funny and heartwarming.", rating: 10, status: "all" },
+  { name: "Gachiakuta", genre: "Anime", description: "Weird adventure with a lot of mystery. Has a unique power systemt in it which caught my eye", rating: 8, status: "all" },
+  { name: "My Dress Up Darling", genre: "Anime", description: "Cosplay, laughs, and a tiny bit of romance. It’s just a chill, feel-good watch.", rating: 9, status: "all" },
+  { name: "Horimiya", genre: "Anime", description: "Two students hiding their real sides meet and things happen. Proabably my favorite romance anime(yes i watch them)", rating: 10, status: "all" },
+  { name: "Shangri La Frontier", genre: "Anime", description: "Gaming adventures that are both tense and exciting. One of my favorite new animes out and its kind of like Sword Art Online", rating: 8, status: "all" },
+  { name: "Chainsaw Man", genre: "Anime", description: "Crazy action, demons everywhere, and some dark humor. Its pretty graphic not really ut overall a good anime", rating: 9, status: "all" },
+  { name: "Dan Dan Dan", genre: "Anime", description: "This has action involving supernatural beings and also romance but the slow kind where they dont even realize it", rating: 8, status: "all" },
+  { name: "Lord of the Mysteries", genre: "Anime", description: "This was based off a light novel i read so i was exxcited it got an anime. Probably one of the most unique power systems and insane world building", rating: 9, status: "all" },
+  { name: "Wind Breaker", genre: "Anime", description: "Involves a student who moves into a new school full of delinquents and has a lot of fighting", rating: 8, status: "all" },
+  { name: "Alya Sometimes Hiders her feelings in Russian", genre: "Anime", description: "Lowkey romance and comedy. another good romance i liked", rating: 8, status: "all" },
+  { name: "86 eighty six", genre: "Anime", description: "One of my favorites involving a military group fighting against an alien threat", rating: 9, status: "all" },
+  { name: "My love story with Yamada run at lvl 999", genre: "Anime", description: "Another romannce i found entertaining and heartwarming", rating: 8, status: "all" },
+  { name: "Cyberpunk", genre: "Anime", description: "Futuristic action and cool fight scenes and some nice worldbuilding. im sure youve heard of the game", rating: 10, status: "all" },
+  { name: "Sakamoto Days", genre: "Anime", description: "Currently one of my favorites. A retired assasin trying to live a normal life but gets dragged back into that life", rating: 10, status: "all" },
+  { name: "Blue Box", genre: "Anime", description: "Romance + sports. Its a good show with a balance of both the romance and sports ( healed me fr)", rating: 9, status: "all" },
+  { name: "Mashle", genre: "Anime", description: "Magic school but goofy and fun. Caught me by surprise by how much i laughed", rating: 8, status: "all" },
 
-  /* Shows */
-  { name: "Severance", category: "Shows", genre: "Sci-Fi", description: "Corporate thriller about work-life separation.", rating: 10, status: "all" },
-  { name: "From", category: "Shows", genre: "Horror", description: "Mysterious town trapping visitors.", rating: 9, status: "all" },
-  { name: "Alice In Borderland", category: "Shows", genre: "Action", description: "Survival games in a parallel world.", rating: 9, status: "all" },
-  { name: "Narcos", category: "Shows", genre: "Drama", description: "Drug cartel drama based on real events.", rating: 10, status: "all" },
-  { name: "Dark", category: "Shows", genre: "Sci-Fi", description: "Time travel mystery thriller.", rating: 10, status: "all" },
-  { name: "South Park", category: "Shows", genre: "Comedy", description: "Adult animated comedy.", rating: 9, status: "all" },
-  { name: "Regular Show", category: "Shows", genre: "Comedy", description: "Animated comedy with surreal humor.", rating: 8, status: "all" },
-  { name: "Bobs Burgers", category: "Shows", genre: "Comedy", description: "Family-run burger restaurant comedy.", rating: 8, status: "all" },
-  { name: "Punisher", category: "Shows", genre: "Action", description: "Marvel vigilante action.", rating: 9, status: "all" },
-  { name: "Abbot Elementary", category: "Shows", genre: "Comedy", description: "Comedy about a school staff.", rating: 8, status: "all" },
+  /* ---------------- Shows ---------------- */
+  { name: "Severance", genre: "Shows", description: "Office work gets weird when people’s memories are split between work and home", rating: 8, status: "all" },
+  { name: "From", genre: "Shows", description: "People stuck in a mysterious town that won’t let them leave. Season 2 kinda dragged but season 3 made up for it", rating: 10, status: "all" },
+  { name: "Alice In Borderland", genre: "Shows", description: "Survival games as it kind of reminded me of squid games LOL.", rating: 9, status: "all" },
+  { name: "Narcos", genre: "Shows", description: "The story of Pablo Escobar and the Medellin Cartel. Only watch the first two seasons tbh 3rd u dont need too", rating: 10, status: "all" },
+  { name: "Dark", genre: "Shows", description: "Time travel mystery that messes with your head in the best way.", rating: 10, status: "all" },
+  { name: "South Park", genre: "Shows", description: "Very funny LMAOOO thats all i got", rating: 10, status: "all" },
+  { name: "Regular Show", genre: "Shows", description: "MORDECAI AND RIGBY need i say more?", rating: 10, status: "all" },
+  { name: "Bobs Burgers", genre: "Shows", description: "Pretty good show if you want to eat or pass time", rating: 9, status: "all" },
+  { name: "Punisher", genre: "Shows", description: "Lots of action as its based off Marvels Punisher", rating: 9, status: "all" },
+  { name: "Abbot Elementary", genre: "Shows", description: "Comedy about school staff trying to survive and teach", rating: 9, status: "all" },
 
-  /* Movies */
-  { name: "Only the Brave", category: "Movies", genre: "Action", description: "True story of elite firefighters.", rating: 9, status: "all" },
-  { name: "Lone Survivor", category: "Movies", genre: "Action", description: "Military survival drama.", rating: 9, status: "all" },
-  { name: "As Above So Below", category: "Movies", genre: "Horror", description: "Horror adventure in catacombs.", rating: 7, status: "all" },
-  { name: "The Wild Robot", category: "Movies", genre: "Sci-Fi", description: "Animated story about a robot on an island.", rating: 8, status: "all" },
-  { name: "Four Brothers", category: "Movies", genre: "Action", description: "Action drama about siblings avenging a death.", rating: 8, status: "all" },
-  { name: "The Gray Man", category: "Movies", genre: "Action", description: "Action thriller with assassins.", rating: 8, status: "all" },
-  { name: "Hacksaw Ridge", category: "Movies", genre: "Drama", description: "True WWII story of heroism.", rating: 10, status: "all" },
-  { name: "CloverField", category: "Movies", genre: "Sci-Fi", description: "Monster thriller.", rating: 8, status: "all" },
-  { name: "REC", category: "Movies", genre: "Horror", description: "Spanish horror about a zombie outbreak.", rating: 8, status: "all" }
+  /* ---------------- Movies ---------------- */
+  { name: "Only the Brave", genre: "Movies", description: "True story about elite firefighters. lowkey sad", rating: 9, status: "all" },
+  { name: "Lone Survivor", genre: "Movies", description: "My favorite war movie of all time to be honest", rating: 10, status: "all" },
+  { name: "As Above So Below", genre: "Movies", description: "Exploring catacombs gone wrong(dont know why they went there)", rating: 8, status: "all" },
+  { name: "The Wild Robot", genre: "Movies", description: "Have tissues nearby", rating: 10, status: "all" },
+  { name: "Four Brothers", genre: "Movies", description: "Siblings coming together after a tragedy very good movie", rating: 9, status: "all" },
+  { name: "The Gray Man", genre: "Movies", description: "Lots of action and fighting LOL ", rating: 8, status: "all" },
+  { name: "Hacksaw Ridge", genre: "Movies", description: "Another war movie i loved watching", rating: 10, status: "all" },
+  { name: "CloverField", genre: "Movies", description: "A good found footage movie where a monster appears on earth OOOOOOOO", rating: 9, status: "all" },
+  { name: "REC", genre: "Movies", description: "Spanish horror about a zombie outbreak.", rating: 8, status: "all" }
 ];
-
-// ---------------- LocalStorage ----------------
-if (localStorage.getItem("shows")) {
-  shows = JSON.parse(localStorage.getItem("shows"));
-} else {
-  localStorage.setItem("shows", JSON.stringify(shows));
-}
 
 // ---------------- DOM References ----------------
 const allShowsEl = document.getElementById("all-shows");
@@ -60,17 +53,12 @@ const finishedEl = document.getElementById("finished");
 // ---------------- Populate dropdown dynamically ----------------
 function populateFilter() {
   const select = document.getElementById("genreFilter");
-  const genres = [...new Set(shows.map(show => show.genre))].sort();
+  const categories = ["All", "Anime", "Shows", "Movies"];
 
-  const allOption = document.createElement("option");
-  allOption.value = "All";
-  allOption.textContent = "All";
-  select.appendChild(allOption);
-
-  genres.forEach(g => {
+  categories.forEach(cat => {
     const option = document.createElement("option");
-    option.value = g;
-    option.textContent = g;
+    option.value = cat;
+    option.textContent = cat;
     select.appendChild(option);
   });
 }
@@ -82,54 +70,39 @@ function render() {
   finishedEl.innerHTML = "";
 
   const selectedGenre = document.getElementById("genreFilter").value;
-  const categoryMap = {};
+
+  const genreMap = {};
 
   shows.forEach(show => {
     if (selectedGenre !== "All" && show.genre !== selectedGenre) return;
 
     const li = document.createElement("li");
+    li.innerHTML = `
+      <span>${show.name}</span>
+      <div class="actions">
+        ${show.status !== "watching" ? `<button onclick="setStatus('${show.name}', 'watching')">Watching</button>` : ""}
+        ${show.status !== "finished" ? `<button onclick="setStatus('${show.name}', 'finished')">Finished</button>` : ""}
+        <button class="info-btn" onclick="openModal(
+          '${show.name}',
+          '${show.description}',
+          ${show.rating}
+        )">ⓘ</button>
+      </div>
+    `;
 
     if (show.status === "watching") {
-      li.innerHTML = `
-        <span>${show.name}</span>
-        <div class="actions">
-          <button onclick="setStatus('${show.name}', 'finished')">Finished</button>
-          <button onclick="setStatus('${show.name}', 'all')">Reset</button>
-          <button class="info-btn" onclick="openModal('${show.name}', '${show.description}', ${show.rating})">ⓘ</button>
-        </div>
-      `;
       watchingEl.appendChild(li);
-
     } else if (show.status === "finished") {
-      li.innerHTML = `
-        <span>${show.name}</span>
-        <div class="actions">
-          <button onclick="setStatus('${show.name}', 'watching')">Watching</button>
-          <button onclick="setStatus('${show.name}', 'all')">Reset</button>
-          <button class="info-btn" onclick="openModal('${show.name}', '${show.description}', ${show.rating})">ⓘ</button>
-        </div>
-      `;
       finishedEl.appendChild(li);
-
     } else {
-      // All Shows
-      if (!categoryMap[show.category]) {
+      if (!genreMap[show.genre]) {
         const section = document.createElement("div");
         section.className = "genre-section";
-        section.innerHTML = `<h3>${show.category}</h3>`;
-        categoryMap[show.category] = section;
+        section.innerHTML = `<h3>${show.genre}</h3>`;
+        genreMap[show.genre] = section;
         allShowsEl.appendChild(section);
       }
-
-      li.innerHTML = `
-        <span>${show.name}</span>
-        <div class="actions">
-          <button onclick="setStatus('${show.name}', 'watching')">Watching</button>
-          <button onclick="setStatus('${show.name}', 'finished')">Finished</button>
-          <button class="info-btn" onclick="openModal('${show.name}', '${show.description}', ${show.rating})">ⓘ</button>
-        </div>
-      `;
-      categoryMap[show.category].appendChild(li);
+      genreMap[show.genre].appendChild(li);
     }
   });
 }
@@ -138,7 +111,6 @@ function render() {
 function setStatus(name, status) {
   const show = shows.find(s => s.name === name);
   show.status = status;
-  localStorage.setItem("shows", JSON.stringify(shows));
   render();
 }
 
