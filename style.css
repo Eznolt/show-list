@@ -1,120 +1,101 @@
-/* ---------------- Global Styles ---------------- */
+/* ---------------- Body ---------------- */
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #9797f7; /* main background */
-  color: #333;
+  font-family: Arial, sans-serif;
+  background-color: #9797f7; /* background */
+  color: #fff;
 }
 
-h1, h2, h3 {
-  margin: 0;
-  font-weight: 600;
-  color: #c197f7; /* main color for headings */
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* ---------------- App Layout ---------------- */
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 20px;
-}
-
+/* ---------------- Header ---------------- */
 .header {
-  text-align: center;
-  margin-bottom: 20px;
+  background-color: #c197f7; /* main color */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
+.header h1 {
+  margin: 0;
+}
+
+.filters select {
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #9797f7;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ---------------- Dashboard ---------------- */
 .dashboard {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  grid-template-columns: 2fr 1fr; /* Left big, right smaller */
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+/* Left column = All Shows */
+.all-shows {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Right column = Watching / Finished stacked */
+.watching, .finished {
+  margin-bottom: 1rem;
 }
 
 /* ---------------- Cards ---------------- */
 .card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background-color: #c197f7;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
-.all-shows {
-  grid-row: 1 / span 2;
+.card h2 {
+  margin-top: 0;
 }
 
-.watching, .finished {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+/* ---------------- Genre Sections ---------------- */
+.genre-section {
+  margin-bottom: 1rem;
 }
 
 .genre-section h3 {
-  background-color: #c197f7;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 8px;
-  margin-top: 10px;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  text-decoration: underline;
 }
 
+/* ---------------- Show Items ---------------- */
 li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0;
-  border-bottom: 1px solid #eee;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: #9797f7; /* lighter background for list items */
 }
 
-/* ---------------- Buttons ---------------- */
-button {
-  background-color: #c197f7;
+.actions button {
+  margin-left: 0.5rem;
+  background-color: #c197f7; /* main color */
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 4px 8px;
-  margin-left: 5px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: #a075f0;
-}
-
-/* Info Button */
-.info-btn {
-  background-color: transparent;
-  color: #c197f7;
-  font-size: 1rem;
+  padding: 0.3rem 0.5rem;
   font-weight: bold;
-  padding: 0 6px;
 }
 
-.info-btn:hover {
-  color: #a075f0;
-}
-
-/* ---------------- Filters ---------------- */
-.filters {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-select {
-  padding: 5px 10px;
-  border-radius: 6px;
-  border: 1px solid #c197f7;
-  font-weight: 600;
-  background-color: #fff;
-  color: #333;
+.actions button:hover {
+  opacity: 0.85;
 }
 
 /* ---------------- Modal ---------------- */
@@ -124,11 +105,11 @@ select {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .modal.hidden {
@@ -136,42 +117,24 @@ select {
 }
 
 .modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 300px;
-  max-width: 90%;
-  text-align: center;
-  position: relative;
+  background-color: #c197f7; /* main color */
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.modal-content h2 {
-  color: #c197f7;
-  margin-bottom: 10px;
-}
-
-.modal-content p {
-  margin: 5px 0;
-}
-
-.modal-content .rating {
-  font-weight: bold;
-}
-
-/* Close Button */
 .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: #c197f7;
-  color: #fff;
+  float: right;
+  background: none;
   border: none;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  font-size: 1.2rem;
   cursor: pointer;
+  color: #fff;
 }
 
-.close-btn:hover {
-  background-color: #a075f0;
+.rating {
+  margin-top: 1rem;
+  font-weight: bold;
 }

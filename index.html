@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Shows I Like</title>
+  <title>Favorites Watch List</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Info Modal -->
   <div id="info-modal" class="modal hidden">
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal()">✕</button>
@@ -21,19 +20,17 @@
 
   <div class="app">
     <header class="header">
-      <h1>Shows I Like</h1>
+      <h1>WELCOME TO MY FAVORITE THINGS IVE WATCHED HEHE</h1>
+      <div class="filters">
+        <label for="genreFilter">Filter by Genre: </label>
+        <select id="genreFilter" onchange="render()">
+          <!-- Options populated dynamically -->
+        </select>
+      </div>
     </header>
 
-    <!-- Filters -->
-    <div class="filter-bar">
-      <label for="categoryFilter">Category:</label>
-      <select id="categoryFilter" onchange="render()"></select>
-
-      <label for="subGenreFilter">Genre:</label>
-      <select id="subGenreFilter" onchange="render()"></select>
-    </div>
-
     <main class="dashboard">
+
       <section class="card all-shows">
         <h2>All Shows</h2>
         <div id="all-shows"></div>
@@ -48,6 +45,7 @@
         <h2>Finished</h2>
         <ul id="finished"></ul>
       </section>
+
     </main>
   </div>
 
