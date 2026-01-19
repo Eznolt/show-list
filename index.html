@@ -23,9 +23,7 @@
       <h1>WELCOME TO MY FAVORITE THINGS IVE WATCHED HEHE</h1>
       <div class="filters">
         <label for="genreFilter">Filter by Genre: </label>
-        <select id="genreFilter" onchange="render()">
-          <!-- Options populated dynamically -->
-        </select>
+        <select id="genreFilter" onchange="render()"></select>
       </div>
     </header>
 
@@ -33,6 +31,13 @@
 
       <section class="card all-shows">
         <h2>All Shows</h2>
+
+        <!-- PRIORITIES -->
+        <div class="genre-section">
+          <h3>Priorities</h3>
+          <ul id="priorities"></ul>
+        </div>
+
         <div id="all-shows"></div>
       </section>
 

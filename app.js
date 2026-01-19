@@ -42,13 +42,24 @@ const shows = [
   { name: "The Gray Man", genre: "Movies", description: "Lots of action and fighting LOL ", rating: 8, status: "all" },
   { name: "Hacksaw Ridge", genre: "Movies", description: "Another war movie i loved watching", rating: 10, status: "all" },
   { name: "CloverField", genre: "Movies", description: "A good found footage movie where a monster appears on earth OOOOOOOO", rating: 9, status: "all" },
-  { name: "REC", genre: "Movies", description: "Spanish horror about a zombie outbreak.", rating: 8, status: "all" }
+  { name: "REC", genre: "Movies", description: "Spanish horror about a zombie outbreak.", rating: 8, status: "all" },
+  { name: "Chronicles", genre: "Movies", description: "Movie where 3 friends gain superpowers and learn how to use them. One of my favorite movies", rating: 10, status: "all" }
 ];
 
 // ---------------- DOM References ----------------
 const allShowsEl = document.getElementById("all-shows");
+const prioritiesEl = document.getElementById("priorities"); // NEW
 const watchingEl = document.getElementById("watching");
 const finishedEl = document.getElementById("finished");
+
+// ---------------- Priority System (NEW) ----------------
+const prioritySet = new Set();
+
+function togglePriority(name) {
+  if (prioritySet.has(name)) prioritySet.delete(name);
+  else prioritySet.add(name);
+  render();
+}
 
 // ---------------- Populate dropdown dynamically ----------------
 function populateFilter() {
@@ -66,11 +77,11 @@ function populateFilter() {
 // ---------------- Render function ----------------
 function render() {
   allShowsEl.innerHTML = "";
+  prioritiesEl.innerHTML = ""; // NEW
   watchingEl.innerHTML = "";
   finishedEl.innerHTML = "";
 
   const selectedGenre = document.getElementById("genreFilter").value;
-
   const genreMap = {};
 
   shows.forEach(show => {
@@ -82,6 +93,12 @@ function render() {
       <div class="actions">
         ${show.status !== "watching" ? `<button onclick="setStatus('${show.name}', 'watching')">Watching</button>` : ""}
         ${show.status !== "finished" ? `<button onclick="setStatus('${show.name}', 'finished')">Finished</button>` : ""}
+        ${show.status !== "all" ? `<button onclick="setStatus('${show.name}', 'all')">Remove</button>` : ""}
+
+        ${(show.genre === "Shows" || show.genre === "Movies" || show.genre === "Anime")
+          ? `<button onclick="togglePriority('${show.name}')">${prioritySet.has(show.name) ? "Unprioritize" : "Prioritize"}</button>`
+          : ""}
+
         <button class="info-btn" onclick="openModal(
           '${show.name}',
           '${show.description}',
@@ -89,6 +106,14 @@ function render() {
         )">ⓘ</button>
       </div>
     `;
+
+    // NEW: Show prioritized items at top (only if still in All)
+    if ((show.genre === "Shows" || show.genre === "Movies" || show.genre === "Anime") &&
+        prioritySet.has(show.name) &&
+        show.status === "all") {
+      prioritiesEl.appendChild(li);
+      return;
+    }
 
     if (show.status === "watching") {
       watchingEl.appendChild(li);
